@@ -57,6 +57,10 @@
     <div id="platformContent">
       <div class="sub-tabs-header" id="subTabsHeader"></div>
       <div class="file-tabs-header" id="fileTabsHeader"></div>
+      <div class="alert-bar" id="alertBar" style="display:none;">
+        <i class="fas fa-exclamation-triangle"></i>
+        <span id="alertText"></span>
+      </div>
       <div class="file-viewer">
         <div class="file-header">
           <div class="file-info">
@@ -78,8 +82,9 @@
 
     <div class="footer-note">
       <div class="footer-left">
-        <a href="https://github.com/urmoit/Roblox-Offsets" class="star-btn" target="_blank">
+        <a href="https://github.com/urmoit/Roblox-Offsets" class="star-btn" target="_blank" id="starBtn">
           <i class="fas fa-star"></i> Star this repo
+          <span class="star-counter" id="starCounter">...</span>
         </a>
         <button class="star-btn" id="shareBtn" style="background:#1c2128;">
           <i class="fas fa-share-alt"></i> Share
@@ -203,6 +208,18 @@
     const codeEl = document.getElementById('codeContent');
     codeEl.textContent = content;
     currentContent = content;
+    updateAlertBar();
+  }
+
+  function updateAlertBar() {
+    const bar = document.getElementById('alertBar');
+    const text = document.getElementById('alertText');
+    if (currentPlatform === 'windows' && currentFile === 'InternalOffsets.hpp') {
+      text.textContent = '3 offsets failed to resolve (GetLuaState, GetIdentityStruct, and 1 unknown). Total: 107 | Resolved: 104 | Failed: 3';
+      bar.style.display = 'flex';
+    } else {
+      bar.style.display = 'none';
+    }
   }
 
   async function loadFile(platform, file) {
@@ -210,6 +227,7 @@
     currentFile = file;
     updateFileName();
     updateGithubLink();
+    updateAlertBar();
 
     const codeEl = document.getElementById('codeContent');
     codeEl.textContent = 'Loading...';
@@ -283,6 +301,17 @@
 
   document.getElementById('updateDate').textContent = '2026-07-22';
   document.getElementById('footerDate').textContent = '2026-07-22';
+
+  fetch('https://api.github.com/repos/urmoit/Roblox-Offsets')
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const counter = document.getElementById('starCounter');
+      if (counter) counter.textContent = data.stargazers_count.toLocaleString();
+    })
+    .catch(() => {
+      const counter = document.getElementById('starCounter');
+      if (counter) counter.textContent = '0';
+    });
 
   renderSubTabs('windows');
   loadFile('windows', 'InternalOffsets.hpp');
