@@ -1,0 +1,159 @@
+{
+    "metadata": {
+        "Roblox-Version": "version-9affbe66b2624d20",
+        "Total-Offsets": 111
+    },
+    "Offsets": {
+        "FFlagList": {
+            "Pointer": 140056824,
+            "Value": 192
+        },
+        "TaskScheduler": {
+            "Pointer": 135648152,
+            "Jobs": 200,
+            "JobName": 3168,
+            "Fpscap": 176
+        },
+        "VisualEngine": {
+            "Pointer": 137303720,
+            "DeviceD3D11": 152,
+            "ID3D11Device": 448,
+            "IDXGISwapChain": 200,
+            "WindowHandle": 192,
+            "RenderView": 3000,
+            "Dimensions": 2736,
+            "Lighting": 3024,
+            "FakeDataModel": 2704
+        },
+        "FakeDataModel": {
+            "Pointer": 140273928,
+            "DataModel": 464
+        },
+        "DataModel": {
+            "GameLoaded": 1400,
+            "Workspace": 352,
+            "CreatorId": 384,
+            "GameId": 392,
+            "PlaceId": 400,
+            "JobId": 288
+        },
+        "RenderView": {
+            "LightingValid": 552,
+            "SkyValid": 1021
+        },
+        "Instance": {
+            "This": 8,
+            "Name": 152,
+            "Parent": 104,
+            "Children": 112,
+            "ClassDescriptor": 24
+        },
+        "Misc": {
+            "Value": 184
+        },
+        "ClassDescriptor": {
+            "ClassName": 8,
+            "DescriptorBase": 560,
+            "PropertyDescriptors": 64
+        },
+        "PropertyDescriptor": {
+            "Name": 8
+        },
+        "Workspace": {
+            "World": 992,
+            "CurrentCamera": 1160
+        },
+        "World": {
+            "Gravity": 528,
+            "WorldSteps": 1664
+        },
+        "MouseService": {
+            "InputObject": 256
+        },
+        "InputObject": {
+            "MousePosition": 212
+        },
+        "Lighting": {
+            "Sky": 456,
+            "Ambient": 200,
+            "ClockTime": 424,
+            "GlobalShadows": 312,
+            "ShadowSoftness": 304,
+            "OutdoorAmbient": 248,
+            "GeographicLatitude": 384,
+            "Atmosphere": 472,
+            "Brightness": 272,
+            "FogStart": 296,
+            "FogEnd": 292,
+            "FogColor": 236,
+            "ExposureCompensation": 284,
+            "EnvironmentDiffuseScale": 276,
+            "EnvironmentSpecularScale": 280,
+            "ColorShiftTop": 224,
+            "ColorShiftBottom": 212
+        },
+        "LightingParameters": {
+            "TrueSunPosition": 360,
+            "TrueMoonPosition": 372,
+            "SkyAmbient": 320,
+            "SkyAmbient2": 388,
+            "LightDirection": 344,
+            "LightColor": 332,
+            "Source": 356
+        },
+        "Terrain": {
+            "GrassLength": 392,
+            "WaterColor": 376,
+            "WaterTransparency": 404,
+            "WaterReflectance": 400,
+            "WaterWaveSpeed": 412,
+            "WaterWaveSize": 408
+        },
+        "Player": {
+            "LocalPlayer": 304,
+            "UserId": 768,
+            "DisplayName": 312,
+            "LocaleId": 216,
+            "CameraMode": 880,
+            "TeamColor": 940,
+            "Team": 728,
+            "ModelInstance": 664,
+            "CharacterAppearanceId": 768,
+            "CameraMaxZoomDistance": 872,
+            "CameraMinZoomDistance": 876
+        },
+        "Team": {
+            "BrickColor": 184
+        },
+        "Humanoid": {
+            "Sit": 478,
+            "Jump": 474,
+            "PlatformStand": 476,
+            "WalkSpeed": 464,
+            "WalkSpeedCheck": 956,
+            "Health": 392,
+            "MaxHealth": 424,
+            "JumpPower": 420,
+            "JumpHeight": 416,
+            "UseJumpPower": 480,
+            "AutoJumpEnabled": 468,
+            "HipHeight": 404,
+            "MaxSlopeAngle": 428,
+            "RequiresNeck": 477,
+            "AutoRotate": 469,
+            "RigType": 448,
+            "WalkToPart": 280,
+            "WalkToPoint": 356,
+            "IsWalking": 2367,
+            "WalkTimer": 1032,
+            "NameOcclusion": 436,
+            "NameDisplayDistance": 432,
+            "DisplayDistanceType": 384,
+            "HealthDisplayDistance": 396,
+            "HealthDisplayType": 400,
+            "AutomaticScalingEnabled": 470,
+            "BreakJointsOnDeath": 471,
+            "EvaluateStateMachine": 472
+        }
+    }
+}
