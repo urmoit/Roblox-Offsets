@@ -75,7 +75,7 @@ We welcome contributions! Here's how you can help:
 > **Disclaimer:** These offsets are for educational and research purposes only. Use at your own risk. Offsets may change with each Roblox update. Always verify offsets before use.
 
 ## 🔗 Links
-* [Interactive Offsets Viewer](https://your-username.github.io/roblox-offsets)
+* [Interactive Offsets Viewer](https://urmoit.github.io/Roblox-Offsets/)
 
 
 ## 👥 Credits
