@@ -3,22 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Roblox Offsets · dark</title>
+  <title>Roblox Offsets</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="container">
   <div class="card">
-    <!-- HEADER -->
     <div class="header">
       <div class="header-left">
         <i class="fas fa-cube"></i>
         <h1>Roblox Offsets</h1>
-        <span class="badge">internal + external</span>
+        <span class="badge">Windows · Mac · Android</span>
       </div>
       <div class="date-badge">
         <i class="far fa-calendar-alt"></i>
@@ -27,428 +26,267 @@
       </div>
     </div>
 
-    <!-- GRID -->
-    <div class="offsets-grid">
-      <!-- LEFT: internal (no JSON button) -->
-      <div class="section-card">
-        <div class="section-title">
-          <div class="section-title-left">
-            <i class="fas fa-microchip"></i>
-            <span>Internal offsets</span>
-          </div>
-          <!-- JSON button removed for internal -->
-        </div>
-        <div id="internalContainer">
-          <!-- Core internal -->
-          <div class="offset-item"><span class="offset-name">Print</span><span class="offset-value">0x834D90</span><button class="copy-btn" data-copy="Print = resolve(0x834D90);"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">KTable</span><span class="offset-value">0x8166010</span><button class="copy-btn" data-copy="KTable = resolve(0x8166010);"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">FlogDataBank</span><span class="offset-value">0x85918F8</span><button class="copy-btn" data-copy="FlogDataBank = resolve(0x85918F8);"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">TaskSchedulerTargetFps</span><span class="offset-value">0x815D0E8</span><button class="copy-btn" data-copy="TaskSchedulerTargetFps = resolve(0x815D0E8);"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">LockViolationInstanceCrash</span><span class="offset-value">0x85B96F8</span><button class="copy-btn" data-copy="LockViolationInstanceCrash = resolve(0x85B96F8);"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">LockViolationScriptCrash</span><span class="offset-value">0x845BEA8</span><button class="copy-btn" data-copy="LockViolationScriptCrash = resolve(0x845BEA8);"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">OpcodeLookupTable</span><span class="offset-value">0x5F1AAF0</span><button class="copy-btn" data-copy="OpcodeLookupTable = resolve(0x5F1AAF0);"><i class="fas fa-copy"></i> C++</button></div>
-          
-          <div class="sub-header"><i class="fas fa-chevron-right inline-icon"></i> Rendering</div>
-          <div class="offset-item"><span class="offset-name">RenderJobToRenderView</span><span class="offset-value">0x1D0</span><button class="copy-btn" data-copy="RenderJobToRenderView = 0x1D0;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">RenderViewToDevice</span><span class="offset-value">0x8</span><button class="copy-btn" data-copy="RenderViewToDevice = 0x8;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">DeviceToSwapChain</span><span class="offset-value">0xC8</span><button class="copy-btn" data-copy="DeviceToSwapChain = 0xC8;"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-flag inline-icon"></i> FFlag</div>
-          <div class="offset-item"><span class="offset-name">GetFFlag</span><span class="offset-value">0x27F2BA0</span><button class="copy-btn" data-copy="GetFFlag = resolve(0x27F2BA0);"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">SetFFlag</span><span class="offset-value">0x27F86E0</span><button class="copy-btn" data-copy="SetFFlag = resolve(0x27F86E0);"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-code inline-icon"></i> State / Context</div>
-          <div class="offset-item"><span class="offset-name">GetVMState</span><span class="offset-value">0x1F1F530</span><button class="copy-btn" data-copy="GetVMState = resolve(0x1F1F530);"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">GetGlobalState</span><span class="offset-value">0x1E79020</span><button class="copy-btn" data-copy="GetGlobalState = resolve(0x1E79020);"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">GetCurrentState</span><span class="offset-value">0x65FEA0</span><button class="copy-btn" data-copy="GetCurrentState = resolve(0x65FEA0);"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">GetCurrentThreadId</span><span class="offset-value">0x7FB0</span><button class="copy-btn" data-copy="GetCurrentThreadId = resolve(0x7FB0);"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">ScriptContextResume</span><span class="offset-value">0x1EFF650</span><button class="copy-btn" data-copy="ScriptContextResume = resolve(0x1EFF650);"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">EnableLoadModule</span><span class="offset-value">0x845FB00</span><button class="copy-btn" data-copy="EnableLoadModule = resolve(0x845FB00);"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-id-card inline-icon"></i> Identity / Capabilities</div>
-          <div class="offset-item"><span class="offset-name">GetCapabilities</span><span class="offset-value">0x793540</span><button class="copy-btn" data-copy="GetCapabilities = resolve(0x793540);"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-cog inline-icon"></i> Struct Field Offsets</div>
-          <div class="offset-item"><span class="offset-name">ttype</span><span class="offset-value">0x68</span><button class="copy-btn" data-copy="ttype = 0x68;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">ttype_number</span><span class="offset-value">0x30</span><button class="copy-btn" data-copy="ttype_number = 0x30;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">get_set</span><span class="offset-value">0x90</span><button class="copy-btn" data-copy="get_set = 0x90;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">getter</span><span class="offset-value">0x8</span><button class="copy-btn" data-copy="getter = 0x8;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">setter</span><span class="offset-value">0x10</span><button class="copy-btn" data-copy="setter = 0x10;"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-tasks inline-icon"></i> Task Library</div>
-          <div class="offset-item"><span class="offset-name">TaskDefer</span><span class="offset-value">0x1FA93D0</span><button class="copy-btn" data-copy="TaskDefer = resolve(0x1FA93D0);"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">TaskSpawn</span><span class="offset-value">0x1FAA2B0</span><button class="copy-btn" data-copy="TaskSpawn = resolve(0x1FAA2B0);"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">TaskDelay</span><span class="offset-value">0x1FA97C0</span><button class="copy-btn" data-copy="TaskDelay = resolve(0x1FA97C0);"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">TaskWait</span><span class="offset-value">0x1FAA630</span><button class="copy-btn" data-copy="TaskWait = resolve(0x1FAA630);"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">TaskCancel</span><span class="offset-value">0x1FA90C0</span><button class="copy-btn" data-copy="TaskCancel = resolve(0x1FA90C0);"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">TaskSynchronize</span><span class="offset-value">0x1FAA430</span><button class="copy-btn" data-copy="TaskSynchronize = resolve(0x1FAA430);"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">TaskDesynchronize</span><span class="offset-value">0x1FA9A10</span><button class="copy-btn" data-copy="TaskDesynchronize = resolve(0x1FA9A10);"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-database inline-icon"></i> DataModel</div>
-          <div class="offset-item"><span class="offset-name">Primitive</span><span class="offset-value">0x128</span><button class="copy-btn" data-copy="DataModel::Primitive = 0x128;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">Overlap</span><span class="offset-value">0x1F0</span><button class="copy-btn" data-copy="DataModel::Overlap = 0x1F0;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">WriteLock</span><span class="offset-value">0x658</span><button class="copy-btn" data-copy="DataModel::WriteLock = 0x658;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">ScriptableFlags</span><span class="offset-value">0x10</span><button class="copy-btn" data-copy="DataModel::ScriptableFlags = 0x10;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">PlaceId</span><span class="offset-value">0x190</span><button class="copy-btn" data-copy="DataModel::PlaceId = 0x190;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">GameLoaded</span><span class="offset-value">0x578</span><button class="copy-btn" data-copy="DataModel::GameLoaded = 0x578;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">RequireBypass</span><span class="offset-value">0x919</span><button class="copy-btn" data-copy="DataModel::RequireBypass = 0x919;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">ResumeFacet</span><span class="offset-value">0x7E8</span><button class="copy-btn" data-copy="DataModel::ResumeFacet = 0x7E8;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">IsParallel</span><span class="offset-value">0x100</span><button class="copy-btn" data-copy="DataModel::IsParallel = 0x100;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">WaitingHybridScriptsJobScriptContext</span><span class="offset-value">0x1B0</span><button class="copy-btn" data-copy="DataModel::WaitingHybridScriptsJobScriptContext = 0x1B0;"><i class="fas fa-copy"></i> C++</button></div>
-        </div>
-        <div class="placeholder-hint"><i class="far fa-check-circle"></i> internal offsets loaded</div>
+    <div class="versions-bar">
+      <div class="version-item">
+        <span class="version-label"><i class="fab fa-windows"></i> Windows</span>
+        <code class="version-value">version-9affbe66b2624d20</code>
       </div>
-
-      <!-- RIGHT: external offsets (with JSON) -->
-      <div class="section-card">
-        <div class="section-title">
-          <div class="section-title-left">
-            <i class="fas fa-plug"></i>
-            <span>External offsets</span>
-          </div>
-          <div class="section-title-actions">
-            <button class="copy-json-btn" id="copyExternalJson"><i class="fas fa-copy"></i> JSON</button>
-          </div>
-        </div>
-        <div id="externalContainer">
-          <div class="sub-header"><i class="fas fa-tag inline-icon"></i> FFlagList</div>
-          <div class="offset-item"><span class="offset-name">Pointer</span><span class="offset-value">0x85918F8</span><button class="copy-btn" data-copy="FFlagList::Pointer = 0x85918F8;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">Value</span><span class="offset-value">0xC0</span><button class="copy-btn" data-copy="FFlagList::Value = 0xC0;"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-tasks inline-icon"></i> TaskScheduler</div>
-          <div class="offset-item"><span class="offset-name">Pointer</span><span class="offset-value">0x815D398</span><button class="copy-btn" data-copy="TaskScheduler::Pointer = 0x815D398;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">Jobs</span><span class="offset-value">0xC8</span><button class="copy-btn" data-copy="TaskScheduler::Jobs = 0xC8;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">JobName</span><span class="offset-value">0xC60</span><button class="copy-btn" data-copy="TaskScheduler::JobName = 0xC60;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">Fpscap</span><span class="offset-value">0xB0</span><button class="copy-btn" data-copy="TaskScheduler::Fpscap = 0xB0;"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-eye inline-icon"></i> VisualEngine</div>
-          <div class="offset-item"><span class="offset-name">Pointer</span><span class="offset-value">0x82F16A8</span><button class="copy-btn" data-copy="VisualEngine::Pointer = 0x82F16A8;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">DeviceD3D11</span><span class="offset-value">0x98</span><button class="copy-btn" data-copy="VisualEngine::DeviceD3D11 = 0x98;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">ID3D11Device</span><span class="offset-value">0x1C0</span><button class="copy-btn" data-copy="VisualEngine::ID3D11Device = 0x1C0;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">IDXGISwapChain</span><span class="offset-value">0xC8</span><button class="copy-btn" data-copy="VisualEngine::IDXGISwapChain = 0xC8;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">WindowHandle</span><span class="offset-value">0xC0</span><button class="copy-btn" data-copy="VisualEngine::WindowHandle = 0xC0;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">RenderView</span><span class="offset-value">0xBB8</span><button class="copy-btn" data-copy="VisualEngine::RenderView = 0xBB8;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">Dimensions</span><span class="offset-value">0xAB0</span><button class="copy-btn" data-copy="VisualEngine::Dimensions = 0xAB0;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">Lighting</span><span class="offset-value">0xBD0</span><button class="copy-btn" data-copy="VisualEngine::Lighting = 0xBD0;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">FakeDataModel</span><span class="offset-value">0xA90</span><button class="copy-btn" data-copy="VisualEngine::FakeDataModel = 0xA90;"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-database inline-icon"></i> FakeDataModel</div>
-          <div class="offset-item"><span class="offset-name">Pointer</span><span class="offset-value">0x85C6908</span><button class="copy-btn" data-copy="FakeDataModel::Pointer = 0x85C6908;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">DataModel</span><span class="offset-value">0x1D0</span><button class="copy-btn" data-copy="FakeDataModel::DataModel = 0x1D0;"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-cube inline-icon"></i> DataModel</div>
-          <div class="offset-item"><span class="offset-name">GameLoaded</span><span class="offset-value">0x578</span><button class="copy-btn" data-copy="DataModel::GameLoaded = 0x578;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">Workspace</span><span class="offset-value">0x160</span><button class="copy-btn" data-copy="DataModel::Workspace = 0x160;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">CreatorId</span><span class="offset-value">0x180</span><button class="copy-btn" data-copy="DataModel::CreatorId = 0x180;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">GameId</span><span class="offset-value">0x188</span><button class="copy-btn" data-copy="DataModel::GameId = 0x188;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">PlaceId</span><span class="offset-value">0x190</span><button class="copy-btn" data-copy="DataModel::PlaceId = 0x190;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">JobId</span><span class="offset-value">0x120</span><button class="copy-btn" data-copy="DataModel::JobId = 0x120;"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-eye inline-icon"></i> RenderView</div>
-          <div class="offset-item"><span class="offset-name">LightingValid</span><span class="offset-value">0x228</span><button class="copy-btn" data-copy="RenderView::LightingValid = 0x228;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">SkyValid</span><span class="offset-value">0x3FD</span><button class="copy-btn" data-copy="RenderView::SkyValid = 0x3FD;"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-cube inline-icon"></i> Instance</div>
-          <div class="offset-item"><span class="offset-name">This</span><span class="offset-value">0x8</span><button class="copy-btn" data-copy="Instance::This = 0x8;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">Name</span><span class="offset-value">0x98</span><button class="copy-btn" data-copy="Instance::Name = 0x98;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">Parent</span><span class="offset-value">0x68</span><button class="copy-btn" data-copy="Instance::Parent = 0x68;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">Children</span><span class="offset-value">0x70</span><button class="copy-btn" data-copy="Instance::Children = 0x70;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">ClassDescriptor</span><span class="offset-value">0x18</span><button class="copy-btn" data-copy="Instance::ClassDescriptor = 0x18;"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-ellipsis-h inline-icon"></i> Misc</div>
-          <div class="offset-item"><span class="offset-name">Value</span><span class="offset-value">0xB8</span><button class="copy-btn" data-copy="Misc::Value = 0xB8;"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-tag inline-icon"></i> ClassDescriptor</div>
-          <div class="offset-item"><span class="offset-name">ClassName</span><span class="offset-value">0x8</span><button class="copy-btn" data-copy="ClassDescriptor::ClassName = 0x8;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">DescriptorBase</span><span class="offset-value">0x230</span><button class="copy-btn" data-copy="ClassDescriptor::DescriptorBase = 0x230;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">PropertyDescriptors</span><span class="offset-value">0x40</span><button class="copy-btn" data-copy="ClassDescriptor::PropertyDescriptors = 0x40;"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-cog inline-icon"></i> PropertyDescriptor</div>
-          <div class="offset-item"><span class="offset-name">Name</span><span class="offset-value">0x8</span><button class="copy-btn" data-copy="PropertyDescriptor::Name = 0x8;"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-globe inline-icon"></i> Workspace</div>
-          <div class="offset-item"><span class="offset-name">World</span><span class="offset-value">0x3E0</span><button class="copy-btn" data-copy="Workspace::World = 0x3E0;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">CurrentCamera</span><span class="offset-value">0x488</span><button class="copy-btn" data-copy="Workspace::CurrentCamera = 0x488;"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-globe-americas inline-icon"></i> World</div>
-          <div class="offset-item"><span class="offset-name">Gravity</span><span class="offset-value">0x210</span><button class="copy-btn" data-copy="World::Gravity = 0x210;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">WorldSteps</span><span class="offset-value">0x680</span><button class="copy-btn" data-copy="World::WorldSteps = 0x680;"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-mouse inline-icon"></i> MouseService</div>
-          <div class="offset-item"><span class="offset-name">InputObject</span><span class="offset-value">0x100</span><button class="copy-btn" data-copy="MouseService::InputObject = 0x100;"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-mouse-pointer inline-icon"></i> InputObject</div>
-          <div class="offset-item"><span class="offset-name">MousePosition</span><span class="offset-value">0xD4</span><button class="copy-btn" data-copy="InputObject::MousePosition = 0xD4;"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-sun inline-icon"></i> Lighting</div>
-          <div class="offset-item"><span class="offset-name">Sky</span><span class="offset-value">0x1C8</span><button class="copy-btn" data-copy="Lighting::Sky = 0x1C8;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">Ambient</span><span class="offset-value">0xC8</span><button class="copy-btn" data-copy="Lighting::Ambient = 0xC8;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">ClockTime</span><span class="offset-value">0x1A8</span><button class="copy-btn" data-copy="Lighting::ClockTime = 0x1A8;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">GlobalShadows</span><span class="offset-value">0x138</span><button class="copy-btn" data-copy="Lighting::GlobalShadows = 0x138;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">ShadowSoftness</span><span class="offset-value">0x130</span><button class="copy-btn" data-copy="Lighting::ShadowSoftness = 0x130;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">OutdoorAmbient</span><span class="offset-value">0xF8</span><button class="copy-btn" data-copy="Lighting::OutdoorAmbient = 0xF8;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">GeographicLatitude</span><span class="offset-value">0x180</span><button class="copy-btn" data-copy="Lighting::GeographicLatitude = 0x180;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">Atmosphere</span><span class="offset-value">0x1D8</span><button class="copy-btn" data-copy="Lighting::Atmosphere = 0x1D8;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">Brightness</span><span class="offset-value">0x110</span><button class="copy-btn" data-copy="Lighting::Brightness = 0x110;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">FogStart</span><span class="offset-value">0x128</span><button class="copy-btn" data-copy="Lighting::FogStart = 0x128;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">FogEnd</span><span class="offset-value">0x124</span><button class="copy-btn" data-copy="Lighting::FogEnd = 0x124;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">FogColor</span><span class="offset-value">0xEC</span><button class="copy-btn" data-copy="Lighting::FogColor = 0xEC;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">ExposureCompensation</span><span class="offset-value">0x11C</span><button class="copy-btn" data-copy="Lighting::ExposureCompensation = 0x11C;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">EnvironmentDiffuseScale</span><span class="offset-value">0x114</span><button class="copy-btn" data-copy="Lighting::EnvironmentDiffuseScale = 0x114;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">EnvironmentSpecularScale</span><span class="offset-value">0x118</span><button class="copy-btn" data-copy="Lighting::EnvironmentSpecularScale = 0x118;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">ColorShiftTop</span><span class="offset-value">0xE0</span><button class="copy-btn" data-copy="Lighting::ColorShiftTop = 0xE0;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">ColorShiftBottom</span><span class="offset-value">0xD4</span><button class="copy-btn" data-copy="Lighting::ColorShiftBottom = 0xD4;"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-sliders-h inline-icon"></i> LightingParameters</div>
-          <div class="offset-item"><span class="offset-name">TrueSunPosition</span><span class="offset-value">0x168</span><button class="copy-btn" data-copy="LightingParameters::TrueSunPosition = 0x168;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">TrueMoonPosition</span><span class="offset-value">0x174</span><button class="copy-btn" data-copy="LightingParameters::TrueMoonPosition = 0x174;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">SkyAmbient</span><span class="offset-value">0x140</span><button class="copy-btn" data-copy="LightingParameters::SkyAmbient = 0x140;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">SkyAmbient2</span><span class="offset-value">0x184</span><button class="copy-btn" data-copy="LightingParameters::SkyAmbient2 = 0x184;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">LightDirection</span><span class="offset-value">0x158</span><button class="copy-btn" data-copy="LightingParameters::LightDirection = 0x158;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">LightColor</span><span class="offset-value">0x14C</span><button class="copy-btn" data-copy="LightingParameters::LightColor = 0x14C;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">Source</span><span class="offset-value">0x164</span><button class="copy-btn" data-copy="LightingParameters::Source = 0x164;"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-mountain inline-icon"></i> Terrain</div>
-          <div class="offset-item"><span class="offset-name">GrassLength</span><span class="offset-value">0x188</span><button class="copy-btn" data-copy="Terrain::GrassLength = 0x188;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">WaterColor</span><span class="offset-value">0x178</span><button class="copy-btn" data-copy="Terrain::WaterColor = 0x178;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">WaterTransparency</span><span class="offset-value">0x194</span><button class="copy-btn" data-copy="Terrain::WaterTransparency = 0x194;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">WaterReflectance</span><span class="offset-value">0x190</span><button class="copy-btn" data-copy="Terrain::WaterReflectance = 0x190;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">WaterWaveSpeed</span><span class="offset-value">0x19C</span><button class="copy-btn" data-copy="Terrain::WaterWaveSpeed = 0x19C;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">WaterWaveSize</span><span class="offset-value">0x198</span><button class="copy-btn" data-copy="Terrain::WaterWaveSize = 0x198;"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-user inline-icon"></i> Player</div>
-          <div class="offset-item"><span class="offset-name">LocalPlayer</span><span class="offset-value">0x130</span><button class="copy-btn" data-copy="Player::LocalPlayer = 0x130;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">UserId</span><span class="offset-value">0x300</span><button class="copy-btn" data-copy="Player::UserId = 0x300;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">DisplayName</span><span class="offset-value">0x138</span><button class="copy-btn" data-copy="Player::DisplayName = 0x138;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">LocaleId</span><span class="offset-value">0xD8</span><button class="copy-btn" data-copy="Player::LocaleId = 0xD8;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">CameraMode</span><span class="offset-value">0x370</span><button class="copy-btn" data-copy="Player::CameraMode = 0x370;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">TeamColor</span><span class="offset-value">0x3AC</span><button class="copy-btn" data-copy="Player::TeamColor = 0x3AC;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">Team</span><span class="offset-value">0x2D8</span><button class="copy-btn" data-copy="Player::Team = 0x2D8;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">ModelInstance</span><span class="offset-value">0x298</span><button class="copy-btn" data-copy="Player::ModelInstance = 0x298;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">CharacterAppearanceId</span><span class="offset-value">0x300</span><button class="copy-btn" data-copy="Player::CharacterAppearanceId = 0x300;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">CameraMaxZoomDistance</span><span class="offset-value">0x368</span><button class="copy-btn" data-copy="Player::CameraMaxZoomDistance = 0x368;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">CameraMinZoomDistance</span><span class="offset-value">0x36C</span><button class="copy-btn" data-copy="Player::CameraMinZoomDistance = 0x36C;"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-users inline-icon"></i> Team</div>
-          <div class="offset-item"><span class="offset-name">BrickColor</span><span class="offset-value">0xB8</span><button class="copy-btn" data-copy="Team::BrickColor = 0xB8;"><i class="fas fa-copy"></i> C++</button></div>
-
-          <div class="sub-header"><i class="fas fa-walking inline-icon"></i> Humanoid</div>
-          <div class="offset-item"><span class="offset-name">Sit</span><span class="offset-value">0x1DE</span><button class="copy-btn" data-copy="Humanoid::Sit = 0x1DE;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">Jump</span><span class="offset-value">0x1DA</span><button class="copy-btn" data-copy="Humanoid::Jump = 0x1DA;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">PlatformStand</span><span class="offset-value">0x1DC</span><button class="copy-btn" data-copy="Humanoid::PlatformStand = 0x1DC;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">WalkSpeed</span><span class="offset-value">0x1D0</span><button class="copy-btn" data-copy="Humanoid::WalkSpeed = 0x1D0;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">WalkSpeedCheck</span><span class="offset-value">0x3BC</span><button class="copy-btn" data-copy="Humanoid::WalkSpeedCheck = 0x3BC;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">Health</span><span class="offset-value">0x188</span><button class="copy-btn" data-copy="Humanoid::Health = 0x188;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">MaxHealth</span><span class="offset-value">0x1A8</span><button class="copy-btn" data-copy="Humanoid::MaxHealth = 0x1A8;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">JumpPower</span><span class="offset-value">0x1A4</span><button class="copy-btn" data-copy="Humanoid::JumpPower = 0x1A4;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">JumpHeight</span><span class="offset-value">0x1A0</span><button class="copy-btn" data-copy="Humanoid::JumpHeight = 0x1A0;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">UseJumpPower</span><span class="offset-value">0x1E0</span><button class="copy-btn" data-copy="Humanoid::UseJumpPower = 0x1E0;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">AutoJumpEnabled</span><span class="offset-value">0x1D4</span><button class="copy-btn" data-copy="Humanoid::AutoJumpEnabled = 0x1D4;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">HipHeight</span><span class="offset-value">0x194</span><button class="copy-btn" data-copy="Humanoid::HipHeight = 0x194;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">MaxSlopeAngle</span><span class="offset-value">0x1AC</span><button class="copy-btn" data-copy="Humanoid::MaxSlopeAngle = 0x1AC;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">RequiresNeck</span><span class="offset-value">0x1DD</span><button class="copy-btn" data-copy="Humanoid::RequiresNeck = 0x1DD;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">AutoRotate</span><span class="offset-value">0x1D5</span><button class="copy-btn" data-copy="Humanoid::AutoRotate = 0x1D5;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">RigType</span><span class="offset-value">0x1C0</span><button class="copy-btn" data-copy="Humanoid::RigType = 0x1C0;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">WalkToPart</span><span class="offset-value">0x118</span><button class="copy-btn" data-copy="Humanoid::WalkToPart = 0x118;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">WalkToPoint</span><span class="offset-value">0x164</span><button class="copy-btn" data-copy="Humanoid::WalkToPoint = 0x164;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">IsWalking</span><span class="offset-value">0x93F</span><button class="copy-btn" data-copy="Humanoid::IsWalking = 0x93F;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">WalkTimer</span><span class="offset-value">0x408</span><button class="copy-btn" data-copy="Humanoid::WalkTimer = 0x408;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">NameOcclusion</span><span class="offset-value">0x1B4</span><button class="copy-btn" data-copy="Humanoid::NameOcclusion = 0x1B4;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">NameDisplayDistance</span><span class="offset-value">0x1B0</span><button class="copy-btn" data-copy="Humanoid::NameDisplayDistance = 0x1B0;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">DisplayDistanceType</span><span class="offset-value">0x180</span><button class="copy-btn" data-copy="Humanoid::DisplayDistanceType = 0x180;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">HealthDisplayDistance</span><span class="offset-value">0x18C</span><button class="copy-btn" data-copy="Humanoid::HealthDisplayDistance = 0x18C;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">HealthDisplayType</span><span class="offset-value">0x190</span><button class="copy-btn" data-copy="Humanoid::HealthDisplayType = 0x190;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">AutomaticScalingEnabled</span><span class="offset-value">0x1D6</span><button class="copy-btn" data-copy="Humanoid::AutomaticScalingEnabled = 0x1D6;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">BreakJointsOnDeath</span><span class="offset-value">0x1D7</span><button class="copy-btn" data-copy="Humanoid::BreakJointsOnDeath = 0x1D7;"><i class="fas fa-copy"></i> C++</button></div>
-          <div class="offset-item"><span class="offset-name">EvaluateStateMachine</span><span class="offset-value">0x1D8</span><button class="copy-btn" data-copy="Humanoid::EvaluateStateMachine = 0x1D8;"><i class="fas fa-copy"></i> C++</button></div>
-        </div>
-        <div class="placeholder-hint"><i class="far fa-check-circle"></i> external offsets loaded</div>
+      <div class="version-item">
+        <span class="version-label"><i class="fab fa-apple"></i> Mac</span>
+        <code class="version-value">0.731</code>
+        <code class="version-value">version-614a8fd6f9294c9b</code>
+      </div>
+      <div class="version-item">
+        <span class="version-label"><i class="fab fa-android"></i> Android</span>
+        <code class="version-value">2.730.790</code>
       </div>
     </div>
 
-    <!-- FLAGS SECTION -->
-    <div style="margin-top: 2rem;">
-      <div class="section-card">
-        <div class="section-title">
-          <div class="section-title-left">
-            <i class="fas fa-flag"></i>
-            <span>Flags</span>
+    <div class="platform-tabs-header">
+      <button class="platform-tab active" data-platform="windows">
+        <i class="fab fa-windows"></i> Windows
+      </button>
+      <button class="platform-tab" data-platform="mac">
+        <i class="fab fa-apple"></i> Mac
+      </button>
+      <button class="platform-tab" data-platform="android">
+        <i class="fab fa-android"></i> Android
+      </button>
+    </div>
+
+    <div id="platformContent">
+      <div class="sub-tabs-header" id="subTabsHeader"></div>
+      <div class="file-tabs-header" id="fileTabsHeader"></div>
+      <div class="file-viewer">
+        <div class="file-header">
+          <div class="file-info">
+            <i class="fas fa-file-code"></i>
+            <span id="currentFileName">InternalOffsets.hpp</span>
           </div>
-          <div class="section-title-actions">
-            <button class="copy-json-btn" id="copyFlagsJson"><i class="fas fa-copy"></i> JSON</button>
+          <div class="file-actions">
+            <button id="copyBtn" class="copy-btn" title="Copy file content">
+              <i class="fas fa-copy"></i> Copy
+            </button>
+            <a id="githubLink" class="github-btn" href="https://github.com/urmoit/Roblox-Offsets/blob/main/Windows/InternalOffsets.hpp" target="_blank" title="View on GitHub">
+              <i class="fab fa-github"></i> GitHub
+            </a>
           </div>
         </div>
-        <div id="flagsContainer">
-          <div class="flag-item">
-            <span class="flag-name"><i class="far fa-circle" style="font-size:0.6rem; opacity:0.5;"></i> InGame</span>
-            <span class="flag-status enabled">true</span>
-            <button class="copy-btn" data-copy="InGame = true;"><i class="fas fa-copy"></i> C++</button>
-          </div>
-          <div class="flag-item">
-            <span class="flag-name"><i class="far fa-circle" style="font-size:0.6rem; opacity:0.5;"></i> IsAlive</span>
-            <span class="flag-status">false</span>
-            <button class="copy-btn" data-copy="IsAlive = false;"><i class="fas fa-copy"></i> C++</button>
-          </div>
-          <div class="flag-item">
-            <span class="flag-name"><i class="far fa-circle" style="font-size:0.6rem; opacity:0.5;"></i> Flying</span>
-            <span class="flag-status enabled">true</span>
-            <button class="copy-btn" data-copy="Flying = true;"><i class="fas fa-copy"></i> C++</button>
-          </div>
-          <div class="flag-item">
-            <span class="flag-name"><i class="far fa-circle" style="font-size:0.6rem; opacity:0.5;"></i> Wallhack</span>
-            <span class="flag-status">false</span>
-            <button class="copy-btn" data-copy="Wallhack = false;"><i class="fas fa-copy"></i> C++</button>
-          </div>
-          <div class="flag-item">
-            <span class="flag-name"><i class="far fa-circle" style="font-size:0.6rem; opacity:0.5;"></i> NoRecoil</span>
-            <span class="flag-status enabled">true</span>
-            <button class="copy-btn" data-copy="NoRecoil = true;"><i class="fas fa-copy"></i> C++</button>
-          </div>
-          <div class="flag-item">
-            <span class="flag-name"><i class="far fa-circle" style="font-size:0.6rem; opacity:0.5;"></i> ESP</span>
-            <span class="flag-status enabled">true</span>
-            <button class="copy-btn" data-copy="ESP = true;"><i class="fas fa-copy"></i> C++</button>
-          </div>
-          <div class="placeholder-hint"><i class="far fa-flag"></i> flags · copy C++ format</div>
-        </div>
+        <pre class="code-block"><code id="codeContent">Loading...</code></pre>
       </div>
     </div>
 
-    <!-- FOOTER -->
     <div class="footer-note">
       <div class="footer-left">
-        <a href="#" class="star-btn" id="githubStarBtn"><i class="fas fa-star"></i> Star this repo</a>
-        <button class="star-btn" id="shareBtn" style="background:#1c2128;"><i class="fas fa-share-alt"></i> Share</button>
+        <a href="https://github.com/urmoit/Roblox-Offsets" class="star-btn" target="_blank">
+          <i class="fas fa-star"></i> Star this repo
+        </a>
+        <button class="star-btn" id="shareBtn" style="background:#1c2128;">
+          <i class="fas fa-share-alt"></i> Share
+        </button>
         <span class="chip"><i class="far fa-clock"></i> <span id="footerDate">2026-07-22</span></span>
       </div>
       <div class="footer-right">
         <span class="footer-text"><i class="fas fa-code"></i> Made by <strong>ChosenTechies</strong> for Roblox Hacking Community</span>
-        <span class="chip"><i class="fas fa-github"></i> <a href="#" class="repo-link" id="repoLink">offsets-repo</a></span>
+        <span class="chip"><i class="fas fa-github"></i> <a href="https://github.com/urmoit/Roblox-Offsets" class="repo-link" target="_blank">urmoit/Roblox-Offsets</a></span>
       </div>
     </div>
   </div>
 </div>
 
 <script>
-  (function() {
-    const displayDate = '2026-07-22';
-    document.querySelectorAll('#updateDate, #footerDate').forEach(el => {
-      if (el) el.textContent = displayDate;
-    });
+(function() {
+  const GITHUB_BASE = 'https://raw.githubusercontent.com/urmoit/Roblox-Offsets/main';
+  const GITHUB_BLOB_BASE = 'https://github.com/urmoit/Roblox-Offsets/blob/main';
 
-    // Copy C++ button
-    document.querySelectorAll('.copy-btn').forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        const text = this.getAttribute('data-copy');
-        if (!text) return;
-        navigator.clipboard.writeText(text).then(() => {
-          const original = this.innerHTML;
-          this.innerHTML = '<i class="fas fa-check"></i> done';
-          setTimeout(() => { this.innerHTML = original; }, 1200);
-        }).catch(() => {
-          const textarea = document.createElement('textarea');
-          textarea.value = text;
-          document.body.appendChild(textarea);
-          textarea.select();
-          document.execCommand('copy');
-          document.body.removeChild(textarea);
-          const original = this.innerHTML;
-          this.innerHTML = '<i class="fas fa-check"></i> done';
-          setTimeout(() => { this.innerHTML = original; }, 1200);
-        });
-      });
-    });
+  const platformFolders = {
+    windows: 'Windows',
+    mac: 'Mac',
+    android: 'Android'
+  };
 
-    // JSON copy for external offsets only
-    function collectOffsets(containerId) {
-      const container = document.getElementById(containerId);
-      if (!container) return {};
-      const items = container.querySelectorAll('.offset-item');
-      const result = {};
-      items.forEach(item => {
-        const nameEl = item.querySelector('.offset-name');
-        const valueEl = item.querySelector('.offset-value');
-        if (nameEl && valueEl) {
-          const name = nameEl.textContent.trim();
-          const value = valueEl.textContent.trim();
-          result[name] = value;
-        }
+  const platformGroups = {
+    windows: [
+      { id: 'internal', label: 'Internal', icon: 'fas fa-microchip', files: [
+        { name: 'InternalOffsets.hpp', label: 'InternalOffsets.hpp' }
+      ]},
+      { id: 'external', label: 'External', icon: 'fas fa-plug', files: [
+        { name: 'ExternalOffsets.hpp', label: 'ExternalOffsets.hpp' },
+        { name: 'ExternalOffsets.json', label: 'ExternalOffsets.json' }
+      ]},
+      { id: 'fflags', label: 'FFlags', icon: 'fas fa-flag', files: [
+        { name: 'FFlags.hpp', label: 'FFlags.hpp' },
+        { name: 'FFlags.json', label: 'FFlags.json' }
+      ]}
+    ],
+    mac: [
+      { id: 'offsets', label: 'Offsets', icon: 'fas fa-file-code', files: [
+        { name: 'Offsets.hpp', label: 'Offsets.hpp' }
+      ]}
+    ],
+    android: [
+      { id: 'offsets', label: 'Offsets', icon: 'fas fa-file-code', files: [
+        { name: 'Offsets.hpp', label: 'Offsets.hpp' }
+      ]},
+      { id: 'fflags', label: 'FFlags', icon: 'fas fa-flag', files: [
+        { name: 'FFlags.hpp', label: 'FFlags.hpp' }
+      ]},
+      { id: 'structs', label: 'Structs', icon: 'fas fa-cubes', files: [
+        { name: 'Structs.h', label: 'Structs.h' }
+      ]}
+    ]
+  };
+
+  let currentPlatform = 'windows';
+  let currentGroup = 'internal';
+  let currentFile = 'InternalOffsets.hpp';
+  let currentContent = '';
+
+  function getFileUrl(platform, file) {
+    return `${GITHUB_BASE}/${platformFolders[platform]}/${file}`;
+  }
+
+  function getBlobUrl(platform, file) {
+    return `${GITHUB_BLOB_BASE}/${platformFolders[platform]}/${file}`;
+  }
+
+  function renderSubTabs(platform) {
+    const header = document.getElementById('subTabsHeader');
+    const groups = platformGroups[platform];
+    header.innerHTML = '';
+    groups.forEach(g => {
+      const btn = document.createElement('button');
+      btn.className = 'sub-tab-btn' + (g.id === currentGroup ? ' active' : '');
+      btn.dataset.group = g.id;
+      btn.innerHTML = `<i class="${g.icon}"></i> ${g.label}`;
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.sub-tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentGroup = g.id;
+        renderFileTabs(platform);
+        const group = platformGroups[platform].find(grp => grp.id === currentGroup);
+        loadFile(platform, group.files[0].name);
       });
-      return result;
+      header.appendChild(btn);
+    });
+    renderFileTabs(platform);
+  }
+
+  function renderFileTabs(platform) {
+    const header = document.getElementById('fileTabsHeader');
+    const group = platformGroups[platform].find(grp => grp.id === currentGroup);
+    if (!group) { header.innerHTML = ''; return; }
+    header.innerHTML = '';
+    group.files.forEach(f => {
+      const btn = document.createElement('button');
+      btn.className = 'file-tab-btn' + (f.name === currentFile ? ' active' : '');
+      btn.innerHTML = `<i class="fas fa-file-code"></i> ${f.label}`;
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.file-tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        loadFile(platform, f.name);
+      });
+      header.appendChild(btn);
+    });
+  }
+
+  function updateFileName() {
+    document.getElementById('currentFileName').textContent = currentFile;
+  }
+
+  function updateGithubLink() {
+    const link = document.getElementById('githubLink');
+    link.href = getBlobUrl(currentPlatform, currentFile);
+  }
+
+  function updateCodeBlock(content) {
+    const codeEl = document.getElementById('codeContent');
+    codeEl.textContent = content;
+    currentContent = content;
+  }
+
+  async function loadFile(platform, file) {
+    currentPlatform = platform;
+    currentFile = file;
+    updateFileName();
+    updateGithubLink();
+
+    const codeEl = document.getElementById('codeContent');
+    codeEl.textContent = 'Loading...';
+
+    try {
+      const response = await fetch(getFileUrl(platform, file));
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const text = await response.text();
+      updateCodeBlock(text);
+    } catch (err) {
+      codeEl.textContent = `Error loading file: ${err.message}\n\nMake sure you have internet access and the file exists at:\n${getFileUrl(platform, file)}`;
+      currentContent = codeEl.textContent;
     }
+  }
 
-    function collectFlags() {
-      const container = document.getElementById('flagsContainer');
-      if (!container) return {};
-      const items = container.querySelectorAll('.flag-item');
-      const result = {};
-      items.forEach(item => {
-        const nameEl = item.querySelector('.flag-name');
-        const statusEl = item.querySelector('.flag-status');
-        if (nameEl && statusEl) {
-          const name = nameEl.textContent.trim().replace(/[^\w\s]/g, '').trim();
-          const status = statusEl.textContent.trim();
-          result[name] = status;
-        }
-      });
-      return result;
+  function copyToClipboard(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(() => showCopyFeedback()).catch(() => fallbackCopy(text));
+    } else {
+      fallbackCopy(text);
     }
+  }
 
-    document.getElementById('copyExternalJson')?.addEventListener('click', function() {
-      const data = collectOffsets('externalContainer');
-      const json = JSON.stringify(data, null, 2);
-      navigator.clipboard.writeText(json).then(() => {
-        const original = this.innerHTML;
-        this.innerHTML = '<i class="fas fa-check"></i> done';
-        setTimeout(() => { this.innerHTML = original; }, 1200);
-      }).catch(() => {
-        alert('JSON:\n' + json);
-      });
+  function fallbackCopy(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    try { document.execCommand('copy'); showCopyFeedback(); } catch(e) {}
+    document.body.removeChild(textarea);
+  }
+
+  function showCopyFeedback() {
+    const btn = document.getElementById('copyBtn');
+    const original = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.innerHTML = original;
+      btn.classList.remove('copied');
+    }, 1500);
+  }
+
+  document.getElementById('copyBtn').addEventListener('click', () => {
+    if (currentContent) copyToClipboard(currentContent);
+  });
+
+  document.querySelectorAll('.platform-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.platform-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const platform = btn.dataset.platform;
+      currentPlatform = platform;
+      const groups = platformGroups[platform];
+      currentGroup = groups[0].id;
+      renderSubTabs(platform);
+      const firstFile = groups[0].files[0];
+      loadFile(platform, firstFile.name);
     });
+  });
 
-    document.getElementById('copyFlagsJson')?.addEventListener('click', function() {
-      const data = collectFlags();
-      const json = JSON.stringify(data, null, 2);
-      navigator.clipboard.writeText(json).then(() => {
-        const original = this.innerHTML;
-        this.innerHTML = '<i class="fas fa-check"></i> done';
-        setTimeout(() => { this.innerHTML = original; }, 1200);
-      }).catch(() => {
-        alert('JSON:\n' + json);
-      });
-    });
+  document.getElementById('shareBtn').addEventListener('click', () => {
+    if (navigator.share) {
+      navigator.share({ title: 'Roblox Offsets', text: 'Check out these Roblox offsets!', url: window.location.href }).catch(() => {});
+    } else {
+      navigator.clipboard.writeText(window.location.href).then(() => alert('Link copied!')).catch(() => prompt('Copy this link:', window.location.href));
+    }
+  });
 
-    // GitHub star button
-    document.getElementById('githubStarBtn')?.addEventListener('click', function(e) {
-      e.preventDefault();
-      alert('⭐ Star this repo on GitHub! (link will be added)');
-    });
+  document.getElementById('updateDate').textContent = '2026-07-22';
+  document.getElementById('footerDate').textContent = '2026-07-22';
 
-    // Share button
-    document.getElementById('shareBtn')?.addEventListener('click', function() {
-      if (navigator.share) {
-        navigator.share({
-          title: 'Roblox Offsets',
-          text: 'Check out these Roblox offsets!',
-          url: window.location.href
-        }).catch(() => {});
-      } else {
-        navigator.clipboard.writeText(window.location.href).then(() => {
-          alert('Link copied to clipboard! Share it with your community.');
-        }).catch(() => {
-          prompt('Copy this link:', window.location.href);
-        });
-      }
-    });
-
-    // repo link
-    document.getElementById('repoLink')?.addEventListener('click', function(e) {
-      e.preventDefault();
-      alert('GitHub repo link will be added here.');
-    });
-
-  })();
+  renderSubTabs('windows');
+  loadFile('windows', 'InternalOffsets.hpp');
+})();
 </script>
 </body>
 </html>

@@ -14,9 +14,9 @@ This repository contains up-to-date offsets for Roblox across multiple platforms
 ### Current Versions
 | Platform | Client Version | Last Updated |
 | :--- | :--- | :--- |
-| 🪟 **Windows** | `version-9affbe66b2624d20` | 2026-07-22 |
-| 🍎 **Mac** | `0.731` | 2026-07-22 |
-| 🤖 **Android** | `2.730.790` | 2026-07-22 |
+| 🪟 **Windows** | `version-9affbe66b2624d20` | 2026-07-23 |
+| 🍎 **Mac** | `0.731` / `version-614a8fd6f9294c9b` | 2026-07-23 |
+| 🤖 **Android** | `2.730.790` | 2026-07-23 |
 
 ---
 
@@ -24,13 +24,19 @@ This repository contains up-to-date offsets for Roblox across multiple platforms
 
 ```text
 ├── Android/           # Android offset definitions
+│   ├── FFlags.hpp
+│   ├── Offsets.hpp
+│   └── Structs.h
 ├── Mac/               # macOS offset definitions
+│   └── Offsets.hpp
 ├── Windows/           # Windows offset definitions
-│   ├── InternalOffsets.hpp
 │   ├── ExternalOffsets.hpp
 │   ├── ExternalOffsets.json
-│   └── FFlags.hpp
-└────── FFlags.json    
+│   ├── FFlags.hpp
+│   └── InternalOffsets.hpp
+├── index.html
+├── styles.css
+└── README.md
 ```
 
 ## 🛠️ Usage
