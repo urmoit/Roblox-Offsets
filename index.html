@@ -89,6 +89,10 @@
         <a href="https://paypal.me/urmoken" class="donate-btn" target="_blank">
           <i class="fas fa-heart"></i> Donate
         </a>
+        <span class="chip visit-counter">
+          <i class="fas fa-eye"></i>
+          <span id="visitCount">...</span> visits
+        </span>
         <button class="star-btn" id="shareBtn" style="background:#1c2128;">
           <i class="fas fa-share-alt"></i> Share
         </button>
@@ -314,6 +318,17 @@
     .catch(() => {
       const counter = document.getElementById('starCounter');
       if (counter) counter.textContent = '0';
+    });
+
+  fetch('https://api.countapi.xyz/hit/urmoit/Roblox-Offsets')
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const counter = document.getElementById('visitCount');
+      if (counter) counter.textContent = data.value.toLocaleString();
+    })
+    .catch(() => {
+      const counter = document.getElementById('visitCount');
+      if (counter) counter.textContent = '—';
     });
 
   renderSubTabs('windows');

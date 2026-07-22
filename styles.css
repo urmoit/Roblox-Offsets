@@ -408,6 +408,20 @@ body {
 .donate-btn i {
   font-size: 0.8rem;
 }
+.visit-counter {
+  background: #1c2128;
+  border: 1px solid #30363d;
+  color: #8b9bb5;
+  padding: 0.15rem 0.9rem;
+  border-radius: 30px;
+  font-size: 0.7rem;
+  border: 1px solid #30363d;
+  color: #9bb0cc;
+}
+.visit-counter i {
+  color: #6e8bb0;
+  font-size: 0.7rem;
+}
 .repo-link {
   color: #8b9bb5;
   text-decoration: none;
