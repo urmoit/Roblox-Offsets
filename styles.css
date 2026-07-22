@@ -385,6 +385,29 @@ body {
   font-weight: 500;
   margin-left: 0.2rem;
 }
+.donate-btn {
+  background: #0070ba;
+  border: 1px solid #005ea6;
+  color: #ffffff;
+  padding: 0.3rem 1rem;
+  border-radius: 40px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+}
+.donate-btn:hover {
+  background: #005ea6;
+  border-color: #004c87;
+}
+.donate-btn i {
+  font-size: 0.8rem;
+}
 .repo-link {
   color: #8b9bb5;
   text-decoration: none;

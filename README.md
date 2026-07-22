@@ -71,6 +71,10 @@ We welcome contributions! Here's how you can help:
 * Contribute by updating offsets
 * Report any issues you find
 
+## ❤️ Donations
+If you want to support my work, you can donate here:
+* [Donate via PayPal](https://paypal.me/urmoken)
+
 ## 📝 Notes
 > **Disclaimer:** These offsets are for educational and research purposes only. Use at your own risk. Offsets may change with each Roblox update. Always verify offsets before use.
 
