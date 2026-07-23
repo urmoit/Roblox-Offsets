@@ -48,7 +48,10 @@
     </div>
 
     <div class="platform-tabs-header">
-      <button class="platform-tab active" data-platform="windows">
+      <button class="platform-tab active" data-platform="about">
+        <i class="fas fa-info-circle"></i> About
+      </button>
+      <button class="platform-tab" data-platform="windows">
         <i class="fab fa-windows"></i> Windows
       </button>
       <button class="platform-tab" data-platform="mac">
@@ -60,28 +63,92 @@
     </div>
 
     <div id="platformContent">
-      <div class="sub-tabs-header" id="subTabsHeader"></div>
-      <div class="file-tabs-header" id="fileTabsHeader"></div>
-      <div class="alert-bar" id="alertBar" style="display:none;">
-        <i class="fas fa-exclamation-triangle"></i>
-        <span id="alertText"></span>
-      </div>
-      <div class="file-viewer">
-        <div class="file-header">
-          <div class="file-info">
-            <i class="fas fa-file-code"></i>
-            <span id="currentFileName">InternalOffsets.hpp</span>
+      <div class="about-panel" id="aboutPanel">
+        <div class="about-card">
+          <div class="about-header">
+            <i class="fas fa-cube"></i>
+            <h2>Roblox Offsets</h2>
+            <span class="badge">Windows · Mac · Android</span>
           </div>
-          <div class="file-actions">
-            <button id="copyBtn" class="copy-btn" title="Copy file content">
-              <i class="fas fa-copy"></i> Copy
-            </button>
-            <a id="githubLink" class="github-btn" href="https://github.com/urmoit/Roblox-Offsets/blob/main/Windows/InternalOffsets.hpp" target="_blank" title="View on GitHub">
-              <i class="fab fa-github"></i> GitHub
-            </a>
+          <div class="about-body">
+            <p>A comprehensive collection of internal and external offsets for Roblox across Windows, Mac, and Android clients.</p>
+
+            <div class="about-meta">
+              <div class="about-meta-item">
+                <i class="fas fa-star"></i>
+                <span id="aboutStarCount">Loading...</span> stars
+              </div>
+              <div class="about-meta-item">
+                <i class="fas fa-eye"></i>
+                <span id="aboutVisitCount">0</span> views
+              </div>
+              <div class="about-meta-item">
+                <i class="far fa-calendar-alt"></i>
+                <span id="aboutUpdateDate">2026-07-22</span>
+              </div>
+            </div>
+
+            <div class="about-grid">
+              <div class="about-item">
+                <span class="about-label">Windows</span>
+                <span class="about-value">v9affbe66b2624d20</span>
+                <span class="about-sub">Internal · External · FFlags</span>
+              </div>
+              <div class="about-item">
+                <span class="about-label">Mac</span>
+                <span class="about-value">0.731 / v614a8fd6f9294c9b</span>
+                <span class="about-sub">Offsets</span>
+              </div>
+              <div class="about-item">
+                <span class="about-label">Android</span>
+                <span class="about-value">v2.730.790</span>
+                <span class="about-sub">Offsets · FFlags · Structs</span>
+              </div>
+              <div class="about-item">
+                <span class="about-label">License</span>
+                <span class="about-value">MIT</span>
+              </div>
+            </div>
+
+            <div class="about-links">
+              <a href="https://github.com/urmoit/Roblox-Offsets" target="_blank" class="about-link">
+                <i class="fab fa-github"></i> View on GitHub
+              </a>
+              <a href="https://paypal.me/urmoken" target="_blank" class="about-link about-link-donate">
+                <i class="fas fa-heart"></i> Donate
+              </a>
+              <a href="https://github.com/urmoit/Roblox-Offsets" target="_blank" class="about-link">
+                <i class="fas fa-star"></i> Star
+              </a>
+            </div>
           </div>
         </div>
-        <pre class="code-block"><code id="codeContent">Loading...</code></pre>
+      </div>
+
+      <div class="offsets-panel" id="offsetsPanel" style="display:none;">
+        <div class="sub-tabs-header" id="subTabsHeader"></div>
+        <div class="file-tabs-header" id="fileTabsHeader"></div>
+        <div class="alert-bar" id="alertBar" style="display:none;">
+          <i class="fas fa-exclamation-triangle"></i>
+          <span id="alertText"></span>
+        </div>
+        <div class="file-viewer">
+          <div class="file-header">
+            <div class="file-info">
+              <i class="fas fa-file-code"></i>
+              <span id="currentFileName">InternalOffsets.hpp</span>
+            </div>
+            <div class="file-actions">
+              <button id="copyBtn" class="copy-btn" title="Copy file content">
+                <i class="fas fa-copy"></i> Copy
+              </button>
+              <a id="githubLink" class="github-btn" href="https://github.com/urmoit/Roblox-Offsets/blob/main/Windows/InternalOffsets.hpp" target="_blank" title="View on GitHub">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+          <pre class="code-block"><code id="codeContent">Loading...</code></pre>
+        </div>
       </div>
     </div>
 
@@ -150,10 +217,20 @@
     ]
   };
 
-  let currentPlatform = 'windows';
+  let currentPlatform = 'about';
   let currentGroup = 'internal';
   let currentFile = 'InternalOffsets.hpp';
   let currentContent = '';
+
+  function showAboutPanel() {
+    document.getElementById('aboutPanel').style.display = 'block';
+    document.getElementById('offsetsPanel').style.display = 'none';
+  }
+
+  function showOffsetsPanel() {
+    document.getElementById('aboutPanel').style.display = 'none';
+    document.getElementById('offsetsPanel').style.display = 'block';
+  }
 
   function getFileUrl(platform, file) {
     return `${GITHUB_BASE}/${platformFolders[platform]}/${file}`;
@@ -291,6 +368,11 @@
       btn.classList.add('active');
       const platform = btn.dataset.platform;
       currentPlatform = platform;
+      if (platform === 'about') {
+        showAboutPanel();
+        return;
+      }
+      showOffsetsPanel();
       const groups = platformGroups[platform];
       currentGroup = groups[0].id;
       renderSubTabs(platform);
@@ -309,7 +391,7 @@
 
   document.getElementById('updateDate').textContent = '2026-07-22';
 
-  function initVisitCounter() {
+  async function initVisitCounter() {
     const LS_KEY = 'roblox_offsets_visit_v1';
     const now = Date.now();
     const day = 24 * 60 * 60 * 1000;
@@ -328,13 +410,32 @@
     } catch (e) {
       unique = 1;
     }
-    const el = document.getElementById('visitCount');
-    if (el) el.textContent = unique.toLocaleString();
+    const headerEl = document.getElementById('visitCount');
+    const aboutEl = document.getElementById('aboutVisitCount');
+    if (headerEl) headerEl.textContent = unique.toLocaleString();
+    if (aboutEl) aboutEl.textContent = unique.toLocaleString();
   }
 
+  async function initStarCounter() {
+    const el = document.getElementById('aboutStarCount');
+    if (!el) return;
+    try {
+      const res = await fetch('https://api.github.com/repos/urmoit/Roblox-Offsets');
+      if (!res.ok) throw new Error('Failed');
+      const data = await res.json();
+      el.textContent = (data.stargazers_count || 0).toLocaleString();
+    } catch (e) {
+      el.textContent = '—';
+    }
+  }
+
+  document.getElementById('updateDate').textContent = '2026-07-22';
+  const aboutDateEl = document.getElementById('aboutUpdateDate');
+  if (aboutDateEl) aboutDateEl.textContent = '2026-07-22';
+
   initVisitCounter();
-  renderSubTabs('windows');
-  loadFile('windows', 'InternalOffsets.hpp');
+  initStarCounter();
+  showAboutPanel();
 })();
 </script>
 </body>

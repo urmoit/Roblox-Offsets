@@ -405,11 +405,128 @@ body {
   color: #b8cde0;
   font-weight: 500;
 }
+.about-panel {
+  padding: 1.5rem 0 0.5rem;
+}
+.about-card {
+  background: #161b22;
+  border: 1px solid #2d333b;
+  border-radius: 20px;
+  padding: 2rem;
+}
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+.about-header i {
+  font-size: 1.5rem;
+  color: #8b9bb5;
+}
+.about-header h2 {
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+  color: #f0f6fc;
+}
+.about-body p {
+  color: #b1c3d9;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.about-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+.about-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  padding: 0.35rem 0.9rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  color: #b1c3d9;
+  font-weight: 500;
+}
+.about-meta-item i {
+  font-size: 0.75rem;
+  color: #6e8bb0;
+}
+.about-item {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+}
+.about-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #8b9bb5;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+.about-value {
+  display: block;
+  font-size: 0.9rem;
+  color: #e6edf5;
+  font-weight: 500;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+.about-sub {
+  display: block;
+  font-size: 0.75rem;
+  color: #8b9bb5;
+  margin-top: 0.2rem;
+}
+.about-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.about-link {
+  background: #21262d;
+  border: 1px solid #30363d;
+  color: #b1c3d9;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: 0.15s;
+}
+.about-link:hover {
+  background: #2d333b;
+  color: #d1dcec;
+  border-color: #4a5568;
+}
+.about-link-donate {
+  background: #162e50;
+  border-color: #0070ba;
+  color: #58a6ff;
+}
+.about-link-donate:hover {
+  background: #1a3a6a;
+  border-color: #2090ff;
+  color: #79c0ff;
+}
+.offsets-panel {
+  padding-top: 0.5rem;
+}
 @media (max-width: 768px) {
-  .header { flex-direction: column; align-items: flex-start; }
-  .header-right { width: 100%; justify-content: flex-start; }
-  .platform-tabs-header { overflow-x: auto; }
-  .platform-tab { padding: 0.6rem 1rem; font-size: 0.85rem; }
-  .sub-tabs-header { gap: 0.3rem; }
-  .file-header { flex-direction: column; align-items: flex-start; }
+  .about-card { padding: 1.25rem; }
 }
