@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=20260723c">
+  <link rel="stylesheet" href="styles.css?v=20260723d">
 </head>
 <body>
 <div class="container">
@@ -99,10 +99,6 @@
               <div class="about-meta-item">
                 <i class="far fa-calendar-alt"></i>
                 <span id="aboutUpdateDate">2026-07-22</span>
-              </div>
-              <div class="about-meta-item">
-                <i class="fas fa-code-branch"></i>
-                <span id="aboutCommitCount">—</span> forks
               </div>
             </div>
 
@@ -461,14 +457,12 @@
 
   async function initStarCounter() {
     const starEl = document.getElementById('aboutStarCount');
-    const commitEl = document.getElementById('aboutCommitCount');
     if (!starEl) return;
     try {
       const res = await fetch('https://api.github.com/repos/urmoit/Roblox-Offsets');
       if (!res.ok) throw new Error('Failed');
       const data = await res.json();
       starEl.textContent = (data.stargazers_count || 0).toLocaleString();
-      if (commitEl) commitEl.textContent = (data.forks_count || 0).toLocaleString();
     } catch (e) {
       starEl.textContent = '—';
     }
