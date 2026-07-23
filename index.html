@@ -19,10 +19,11 @@
         <h1>Roblox Offsets</h1>
         <span class="badge">Windows · Mac · Android</span>
       </div>
-      <div class="date-badge">
-        <i class="far fa-calendar-alt"></i>
-        <span id="updateDate">2026-07-22</span>
-        <span style="margin-left:0.2rem; font-weight:400; color:#6e8bb0;">· updated</span>
+      <div class="header-right">
+        <span class="chip visit-counter" title="Live website views">
+          <i class="fas fa-eye"></i>
+          <span id="visitCount">0</span> views
+        </span>
       </div>
     </div>
 
@@ -82,25 +83,18 @@
 
     <div class="footer-note">
       <div class="footer-left">
-        <a href="https://github.com/urmoit/Roblox-Offsets" class="star-btn" target="_blank" id="starBtn">
-          <i class="fas fa-star"></i> Star this repo
-          <span class="star-counter" id="starCounter">...</span>
+        <a href="https://github.com/urmoit/Roblox-Offsets" class="chip" target="_blank">
+          <i class="fas fa-star"></i> Star
         </a>
-        <a href="https://paypal.me/urmoken" class="donate-btn" target="_blank">
+        <a href="https://paypal.me/urmoken" class="chip donate-chip" target="_blank">
           <i class="fas fa-heart"></i> Donate
         </a>
-        <span class="chip visit-counter">
-          <i class="fas fa-eye"></i>
-          <span id="visitCount">...</span> visits
-        </span>
-        <button class="star-btn" id="shareBtn" style="background:#1c2128;">
+        <button class="chip" id="shareBtn">
           <i class="fas fa-share-alt"></i> Share
         </button>
-        <span class="chip"><i class="far fa-clock"></i> <span id="footerDate">2026-07-22</span></span>
       </div>
       <div class="footer-right">
-        <span class="footer-text"><i class="fas fa-code"></i> Made by <strong>ChosenTechies</strong> for Roblox Hacking Community</span>
-        <span class="chip"><i class="fas fa-github"></i> <a href="https://github.com/urmoit/Roblox-Offsets" class="repo-link" target="_blank">urmoit/Roblox-Offsets</a></span>
+        <span class="footer-text">Made by <strong>ChosenTechies</strong> for Roblox Hacking Community</span>
       </div>
     </div>
   </div>
@@ -309,28 +303,30 @@
   document.getElementById('updateDate').textContent = '2026-07-22';
   document.getElementById('footerDate').textContent = '2026-07-22';
 
-  fetch('https://api.github.com/repos/urmoit/Roblox-Offsets')
-    .then(r => r.ok ? r.json() : Promise.reject())
-    .then(data => {
-      const counter = document.getElementById('starCounter');
-      if (counter) counter.textContent = data.stargazers_count.toLocaleString();
-    })
-    .catch(() => {
-      const counter = document.getElementById('starCounter');
-      if (counter) counter.textContent = '0';
-    });
+  function initVisitCounter() {
+    const LS_KEY = 'roblox_offsets_visit_v1';
+    const now = Date.now();
+    const day = 24 * 60 * 60 * 1000;
+    let unique = 0;
+    try {
+      const raw = localStorage.getItem(LS_KEY);
+      const data = raw ? JSON.parse(raw) : { count: 0, lastVisit: 0 };
+      if (now - data.lastVisit > day) {
+        data.count += 1;
+        data.lastVisit = now;
+        unique = data.count;
+        localStorage.setItem(LS_KEY, JSON.stringify(data));
+      } else {
+        unique = data.count;
+      }
+    } catch (e) {
+      unique = 1;
+    }
+    const el = document.getElementById('visitCount');
+    if (el) el.textContent = unique.toLocaleString();
+  }
 
-  fetch('https://api.countapi.xyz/hit/urmoit/Roblox-Offsets')
-    .then(r => r.ok ? r.json() : Promise.reject())
-    .then(data => {
-      const counter = document.getElementById('visitCount');
-      if (counter) counter.textContent = data.value.toLocaleString();
-    })
-    .catch(() => {
-      const counter = document.getElementById('visitCount');
-      if (counter) counter.textContent = '—';
-    });
-
+  initVisitCounter();
   renderSubTabs('windows');
   loadFile('windows', 'InternalOffsets.hpp');
 })();
