@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=20260723">
 </head>
 <body>
 <div class="container">
@@ -16,7 +16,10 @@
     <div class="header">
       <div class="header-left">
         <i class="fas fa-cube"></i>
-        <h1>Roblox Offsets</h1>
+        <div class="header-title-group">
+          <h1>Roblox Offsets</h1>
+          <span class="header-subtitle">Updated offsets for reverse engineering and research</span>
+        </div>
         <span class="badge">Windows · Mac · Android</span>
       </div>
       <div class="header-right">
@@ -67,11 +70,21 @@
         <div class="about-card">
           <div class="about-header">
             <i class="fas fa-cube"></i>
-            <h2>Roblox Offsets</h2>
-            <span class="badge">Windows · Mac · Android</span>
+            <div class="about-title-group">
+              <h2>About This Repo</h2>
+              <span class="about-subtitle">Roblox Offsets — Windows, Mac, Android</span>
+            </div>
+            <span class="badge">MIT License</span>
           </div>
           <div class="about-body">
-            <p>A comprehensive collection of internal and external offsets for Roblox across Windows, Mac, and Android clients.</p>
+            <p>
+              This repository provides up-to-date Roblox client offsets and related data for reverse engineering purposes.
+              Offsets are organized by platform and category, with raw files fetched directly from GitHub so you always get the latest version.
+            </p>
+            <p>
+              Use the tabs above to browse Windows, Mac, or Android offsets. Each platform contains internal offsets, external mappings,
+              FFlags, configs, and structs where applicable. Click <strong>Copy</strong> to copy the raw file content to your clipboard.
+            </p>
 
             <div class="about-meta">
               <div class="about-meta-item">
@@ -86,28 +99,61 @@
                 <i class="far fa-calendar-alt"></i>
                 <span id="aboutUpdateDate">2026-07-22</span>
               </div>
+              <div class="about-meta-item">
+                <i class="fas fa-code-branch"></i>
+                <span id="aboutCommitCount">—</span> commits
+              </div>
             </div>
 
             <div class="about-grid">
               <div class="about-item">
-                <span class="about-label">What's inside</span>
-                <span class="about-value">Internal & External offsets</span>
-                <span class="about-sub">FFlags, JSON configs, and structs for multiple platforms</span>
+                <span class="about-label">Windows</span>
+                <span class="about-value">version-9affbe66b2624d20</span>
+                <span class="about-sub">Internal · External · FFlags</span>
               </div>
               <div class="about-item">
-                <span class="about-label">How to use</span>
-                <span class="about-value">Browse tabs above</span>
-                <span class="about-sub">Select a platform, then copy raw files directly from GitHub</span>
+                <span class="about-label">Mac</span>
+                <span class="about-value">0.731 / version-614a8fd6f9294c9b</span>
+                <span class="about-sub">Offsets</span>
               </div>
               <div class="about-item">
-                <span class="about-label">Updates</span>
-                <span class="about-value">Updated regularly</span>
-                <span class="about-sub">Follow the repo or star to stay informed about new versions</span>
+                <span class="about-label">Android</span>
+                <span class="about-value">version-2.730.790</span>
+                <span class="about-sub">Offsets · FFlags · Structs</span>
               </div>
               <div class="about-item">
                 <span class="about-label">License</span>
                 <span class="about-value">MIT</span>
               </div>
+            </div>
+
+            <div class="about-section">
+              <h3 class="about-section-title"><i class="fas fa-list-ul"></i> What You Get</h3>
+              <ul class="about-list">
+                <li><i class="fas fa-check"></i> Internal offsets for Windows, Mac, and Android</li>
+                <li><i class="fas fa-check"></i> External offset mappings in HPP and JSON formats</li>
+                <li><i class="fas fa-check"></i> FFlags configurations compatible with various Roblox clients</li>
+                <li><i class="fas fa-check"></i> Struct definitions for memory analysis and cheat development</li>
+                <li><i class="fas fa-check"></i> One-click copy directly from GitHub raw content</li>
+                <li><i class="fas fa-check"></i> Always up-to-date with latest client versions</li>
+              </ul>
+            </div>
+
+            <div class="about-section">
+              <h3 class="about-section-title"><i class="fas fa-lightbulb"></i> How to Use</h3>
+              <p class="about-text">
+                Select a platform tab above, then choose a category (Internal, External, FFlags, etc.) and pick a file.
+                Click <strong>Copy</strong> to copy the exact raw content from GitHub. If an offset fails to resolve for Windows Internal,
+                an alert will appear at the top of the viewer.
+              </p>
+            </div>
+
+            <div class="about-section">
+              <h3 class="about-section-title"><i class="fas fa-heart"></i> Support</h3>
+              <p class="about-text">
+                If this repo helps you, consider starring it or donating. Contributions are welcome — feel free to open issues or PRs
+                with updated offsets or fixes.
+              </p>
             </div>
 
             <div class="about-links">
@@ -417,15 +463,18 @@
   }
 
   async function initStarCounter() {
-    const el = document.getElementById('aboutStarCount');
-    if (!el) return;
+    const starEl = document.getElementById('aboutStarCount');
+    const commitEl = document.getElementById('aboutCommitCount');
+    if (!starEl) return;
     try {
       const res = await fetch('https://api.github.com/repos/urmoit/Roblox-Offsets');
       if (!res.ok) throw new Error('Failed');
       const data = await res.json();
-      el.textContent = (data.stargazers_count || 0).toLocaleString();
+      starEl.textContent = (data.stargazers_count || 0).toLocaleString();
+      if (commitEl) commitEl.textContent = (data.open_issues_count !== undefined ? Math.max(0, (data.size || 0)) : '—');
+      if (commitEl) commitEl.textContent = (data.open_issues_count || 0).toLocaleString();
     } catch (e) {
-      el.textContent = '—';
+      starEl.textContent = '—';
     }
   }
 

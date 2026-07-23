@@ -527,6 +527,71 @@ body {
 .offsets-panel {
   padding-top: 0.5rem;
 }
+.header-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.header-subtitle {
+  font-size: 0.8rem;
+  color: #8b9bb5;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+.about-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.about-subtitle {
+  font-size: 0.85rem;
+  color: #8b9bb5;
+  font-weight: 400;
+}
+.about-section {
+  margin-bottom: 1.25rem;
+}
+.about-section-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #d1dcec;
+  margin-bottom: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.about-section-title i {
+  color: #6e8bb0;
+  font-size: 0.85rem;
+}
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.about-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #b1c3d9;
+  font-size: 0.9rem;
+}
+.about-list li i {
+  color: #3fb950;
+  font-size: 0.75rem;
+  width: 14px;
+  text-align: center;
+}
+.about-text {
+  color: #b1c3d9;
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
 @media (max-width: 768px) {
   .about-card { padding: 1.25rem; }
+  .header-title-group { gap: 0.1rem; }
+  .header-subtitle { font-size: 0.75rem; }
 }
