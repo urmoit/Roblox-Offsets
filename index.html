@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=20260723b">
+  <link rel="stylesheet" href="styles.css?v=20260723c">
 </head>
 <body>
 <div class="container">
@@ -102,7 +102,7 @@
               </div>
               <div class="about-meta-item">
                 <i class="fas fa-code-branch"></i>
-                <span id="aboutCommitCount">—</span> commits
+                <span id="aboutCommitCount">—</span> forks
               </div>
             </div>
 
@@ -468,8 +468,7 @@
       if (!res.ok) throw new Error('Failed');
       const data = await res.json();
       starEl.textContent = (data.stargazers_count || 0).toLocaleString();
-      if (commitEl) commitEl.textContent = (data.open_issues_count !== undefined ? Math.max(0, (data.size || 0)) : '—');
-      if (commitEl) commitEl.textContent = (data.open_issues_count || 0).toLocaleString();
+      if (commitEl) commitEl.textContent = (data.forks_count || 0).toLocaleString();
     } catch (e) {
       starEl.textContent = '—';
     }
